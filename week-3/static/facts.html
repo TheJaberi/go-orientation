@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Facts - Golang Orientation</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Golang Orientation</h1>
+        <nav>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/facts">Server Facts</a></li>
+              <li><a href="/learn-more">Learn More</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="facts">
+            <h2>Go Server Facts</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Concurrency</h3>
+                    <p>Go's HTTP server handles each connection in a separate goroutine, allowing efficient handling of multiple requests simultaneously.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>ServeMux</h3>
+                    <p>Go's ServeMux (HTTP request multiplexer) efficiently routes incoming requests to the appropriate handler based on URL patterns.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>File Server</h3>
+                    <p>http.FileServer provides a built-in handler that serves files from a specified directory, with smart handling of paths and security.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Zero Configuration</h3>
+                    <p>Go's net/http package provides production-ready server features with zero configuration needed - just import and serve!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Golang Orientation. All rights reserved.</p>
+    </footer>
+</body>
+</html>
