@@ -34,4 +34,6 @@ Concepts covered:
 - Return values and their types
 - Multiple return values using parentheses: (int, int)
 - Function calls and assignment of return values
+
+show how to keep functions in different folders, showing package function relation
 */

@@ -24,3 +24,9 @@ func main() {
 // Extract First and Last Rune
 // Input: "Hello"
 // Output: First rune: H, Last rune: o
+
+/*
+ replace all these letters to these in a string, then return it,
+ add command line args and also read from file, and write to file,
+ add more conversion questions
+*/
