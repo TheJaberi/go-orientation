@@ -1,9 +1,11 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
+	"strings"
 )
-
 
 // FormatString transforms the input string such that:
 // - The first half of the string is converted to uppercase.
@@ -23,12 +25,15 @@ func FormatString(s string) string {
 
 	var result []rune
 
+	// Convert the first half to uppercase
 	for i := 0; i < mid; i++ {
 		result = append(result, toUpper(runes[i]))
 	}
 
+	// Add the underscore
 	result = append(result, '_')
 
+	// Convert the second half to lowercase
 	for i := mid; i < n; i++ {
 		result = append(result, toLower(runes[i]))
 	}
@@ -51,16 +56,43 @@ func toLower(r rune) rune {
 }
 
 func main() {
-	testCases := []string{
-		"golang",    // even length; expected: "GOL_ang"
-		"helloWorld",// even length; expected: "HELLO_world"
-		"test",      // even length; expected: "TE_st"
-		"abcde",     // odd length; expected: "ABC_de"
+	// Open the input file
+	file, err := os.Open("input.txt")
+	if err != nil {
+		fmt.Println("Error opening file:", err)
+		return
+	}
+	defer file.Close()
+
+	// Create or open the output file for writing
+	resultFile, err := os.Create("result.txt")
+	if err != nil {
+		fmt.Println("Error creating result file:", err)
+		return
+	}
+	defer resultFile.Close()
+
+	// Create a scanner to read the file line by line
+	scanner := bufio.NewScanner(file)
+
+	// Iterate through each line in the file
+	for scanner.Scan() {
+		// For each line, split it into words
+		words := strings.Fields(scanner.Text())
+
+		// Process each word and write the formatted result to the file
+		for _, word := range words {
+			output := FormatString(word)
+			_, err = fmt.Fprint(resultFile, output+" ") // Write only the transformed word
+			if err != nil {
+				fmt.Println("Error writing to result file:", err)
+				return
+			}
+		}
 	}
 
-	fmt.Println("Question 6: Format String with Uppercase, Lowercase, and Underscore")
-	for _, input := range testCases {
-		output := FormatString(input)
-		fmt.Printf("Input: %q -> Output: %q\n", input, output)
+	// Check for errors during file reading
+	if err := scanner.Err(); err != nil {
+		fmt.Println("Error reading file:", err)
 	}
 }
