@@ -1,0 +1,7 @@
+Hello, World!
+
+This is a secret message that will be encrypted using our Secret Keeper tool.
+
+It contains UPPERCASE and lowercase letters, numbers like 123, and special characters !@#$.
+
+Try encrypting this file with both ROT13 and key-based methods to see the difference!
