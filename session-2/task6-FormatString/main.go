@@ -1,3 +1,23 @@
+/*
+Question: Format Strings from File
+----------------------------------
+Write a Go program that reads words from an input file, processes each word according to the following format, and writes the formatted results to an output file:
+1. The first half of each word should be converted to uppercase.
+2. The second half should be converted to lowercase.
+3. An underscore should be inserted in the middle. If the length of the word is odd, the underscore is placed after the middle character.
+
+For example:
+Input: "hello", "world"
+Output: "HE_llo", "WO_rld"
+
+The program should handle multiple words per line and write the results to a file.
+
+Usage:
+go run main.go
+Input file: input.txt
+Output file: result.txt
+*/
+
 package main
 
 import (

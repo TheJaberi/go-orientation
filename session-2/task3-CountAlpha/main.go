@@ -1,14 +1,25 @@
+/*
+Question 3: Count Alphabetic Characters
+-----------------------------------------
+Write a Go program that counts the number of alphabetic characters (A-Z, a-z) in a given string. 
+Ignore any non-alphabetic characters, such as numbers or punctuation.
+
+Example:
+Input: "Hello123!"
+Output: 5
+
+The program should return the number of alphabetic characters in the input string.
+*/
+
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
-// CountAlpha counts the number of alphabetic characters in a string.
-func CountAlpha(s string) int {
+// CountAlphabetic counts the number of alphabetic characters (A-Z, a-z) in a string.
+func CountAlphabetic(s string) int {
 	count := 0
 	for _, ch := range s {
-		if (ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z') {
+		if ('A' <= ch && ch <= 'Z') || ('a' <= ch && ch <= 'z') {
 			count++
 		}
 	}
@@ -17,11 +28,9 @@ func CountAlpha(s string) int {
 
 func main() {
 	input := "Hello123!"
-	count := CountAlpha(input)
+	count := CountAlphabetic(input)
+
 	fmt.Printf("Question 3: Count Alphabetic Characters\n")
 	fmt.Printf("Input: %q\n", input)
 	fmt.Printf("Output: %d alphabetic characters\n", count)
 }
-// Count Alphabetic Characters
-// Input: "Hello123!"
-// Output: 5 alphabetic characters
