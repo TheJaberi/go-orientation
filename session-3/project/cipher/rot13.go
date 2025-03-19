@@ -1,4 +1,4 @@
-package main
+package cipher
 
 import "strings"
 
@@ -13,7 +13,7 @@ func EncryptRot13(input string) string {
 			if char >= 'A' && char <= 'Z' {
 				base = 'A'
 			}
-			
+
 			// Apply ROT13 transformation
 			rotated := (char-base+13)%26 + base
 			result.WriteRune(rotated)
